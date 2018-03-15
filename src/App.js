@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Navigation from './components/Navigation'
 import Map from './components/Map'
-import Places from './components/Places'
+import OfficesContainer from './containers/OfficesContainer'
 //styling
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import createMuiTheme from './styles/theme'
@@ -17,8 +17,6 @@ class App extends Component {
   getChildContext() {
     return { createMuiTheme }
   }
-
-
 
 
   render() {
