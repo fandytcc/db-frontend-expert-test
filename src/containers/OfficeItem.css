@@ -1,0 +1,7 @@
+hour-price, day-price {
+  display: block;
+  float: right;
+  background-color: var(--black);
+  color: var(--primary);
+  text-align: center;
+}

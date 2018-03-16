@@ -40,38 +40,38 @@ class OfficeItem extends PureComponent {
     ...officeShape.isRequired,
   }
 
-  renderPrice(price, key) {
-    const priceRange = Object.keys(price).filter(function(key) {
-      return price[key] === true ? key : null
-    })
-    return priceRange[0]
-  }
-
   render() {
     console.log(this.props)
     const { classes } = this.props
-    const { _id, name, reviews, price, photos, avgRating  } = this.props
-    const reviewCount = reviews.length
+    const { venue } = this.props
 
     return (
       <div className="office-item">
         <Card className={classes.card} >
           <CardMedia
             className={classes.media}
-            image= { photos[0].url }
+            image= { venue.image_urls[0] }
             title= "Office Item"
           />
           <CardContent>
-            <Typography variant="headline" component="h2">
-              { name }
+            <Typography className="office-name" variant="headline" component="h2">
+              { venue.name }
             </Typography>
-            <Typography component="p">
-              { avgRating }
-            </Typography>
-              { this.renderPrice(price) }
-            <Typography component="p">
-              { reviewCount } Reviews
-            </Typography>
+            <div className="office-info">
+              <Typography component="p">
+                { venue.rating }
+              </Typography>
+              <Typography component="p">
+                { venue.review_count } Reviews
+              </Typography>
+              <Typography component="p">
+                { venue.address }
+              </Typography>
+            </div>
+            <div className="price">
+              <div className="hour-price">${venue.hour_price}/hour</div>
+              <div className="day-price">${venue.day_price} - per person</div>
+            </div>
           </CardContent>
         </Card>
       </div>
