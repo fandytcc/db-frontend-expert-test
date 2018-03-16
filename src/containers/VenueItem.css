@@ -8,12 +8,10 @@
   width: 100%;
   height: 150px;
   text-align: left;
-  color: var(--grey);
 }
 
 .venue-name {
   font-weight: bold;
-  color: var(--black);
 }
 
 .venue-info {

@@ -1,23 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from 'material-ui/styles'
-//material-ui
-// import Card, { CardContent, CardMedia } from 'material-ui/Card'
-import Typography from 'material-ui/Typography'
-
-//style Card
-const styles = {
-  card: {
-    maxWidth: 345,
-    boxShadow: 'none',
-    margin: 0,
-    padding: 0,
-  },
-  media: {
-    width: '125%',
-    height: 250,
-  },
-}
+import LikeButton from '../components/LikeButton'
 
 const PLACEHOLDER = 'http://via.placeholder.com/350x180?text=No%20Image'
 
@@ -44,22 +27,31 @@ export const venueShape = PropTypes.shape({
 class VenueItem extends PureComponent {
   static propTypes = {
     ...venueShape.isRequired,
+    toggleLikeVenue: PropTypes.func.isRequired
   }
 
-  renderRating() {
-    
+  toggleLike = () => {
+    const { id } = this.props
+    this.props.toggleLikeVenue(id)
   }
 
   render() {
     console.log(this.props)
     // const { classes } = this.props
-    const { image_urls, name, rating, review_count, address, hour_price, day_price } = this.props
+    const { image_urls, name, rating, review_count, address, hour_price, day_price, liked } = this.props
 
     return (
       <div className="venue-item">
         <div
           className="venue-cover"
           style={{ backgroundImage:`url(${ image_urls[0] || PLACEHOLDER })`, display:'block', backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover', height:280, width:`100%`, zIndex: -1 }} >
+
+          <div className="like-button">
+            <LikeButton
+              onChange={ this.toggleLike }
+              liked={liked}
+            />
+          </div>
 
           <div id="venue-price">
             <div className="hour-rate">{ hour_price && <h2>${hour_price}/hour</h2>}</div>
@@ -72,8 +64,8 @@ class VenueItem extends PureComponent {
             <h3>{ name }</h3>
           </div>
 
-          <div className="venue-info">
-            <h4>{ rating } - { review_count } Reviews - { address }</h4>
+          <div className="venue-info" style={{color: 'grey'}}>
+            <h4>{ rating } - { review_count } Reviews - { address.join(', ') }</h4>
           </div>
         </div>
       </div>
