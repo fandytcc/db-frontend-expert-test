@@ -46,10 +46,12 @@ class App extends Component {
       <MuiThemeProvider theme={createMuiTheme}>
         <div className="App">
           <Navbar />
-        <div className="side-bar">
-          <MapContainer markers={this.state.venues} />
-        </div>
-          <VenuesContainer venues={this.state.venues} />
+        <div className="main-container">
+          <div className="side-bar">
+            <MapContainer markers={this.state.venues} />
+          </div>
+            <VenuesContainer venues={this.state.venues} />
+          </div>
         </div>
       </MuiThemeProvider>
     )

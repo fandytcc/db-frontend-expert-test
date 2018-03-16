@@ -1,8 +1,16 @@
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(1fr));
+}
+
 .side-bar {
-  width: 20%;
-  float: left;
-  padding: 30px;
+  grid-column: 1/2;
   margin: 0;
+  padding: 30px;
+}
+
+.venue-container {
+  grid-column: 2/5;
 }
 
 .hour-rate, .day-rate {
