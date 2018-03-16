@@ -24,12 +24,27 @@ class VenueItem extends PureComponent {
 
   renderRating() {
     const { rating } = this.props
+    const star = Math.round(rating/2)
 
+    switch (star) {
+      case 1:
+        return '⭐✩✩✩✩'
+      case 2:
+        return '⭐⭐✩✩✩'
+      case 3:
+        return '⭐⭐⭐✩✩'
+      case 4:
+        return '⭐⭐⭐⭐✩'
+      case 5:
+        return '⭐⭐⭐⭐⭐'
+      default:
+        return '✩✩✩✩✩'
+    }
   }
 
   render() {
     console.log(this.props)
-    const { image_urls, name, rating, review_count, address, hour_price, day_price } = this.props
+    const { image_urls, name, review_count, address, hour_price, day_price } = this.props
 
     return (
       <div className="venue-item">
@@ -53,7 +68,7 @@ class VenueItem extends PureComponent {
           </div>
 
           <div className="venue-info" style={{color: 'grey'}}>
-            <h4>{ rating } - { review_count } Reviews - { address.join(', ') }</h4>
+            <h4><span className="rating">{ this.renderRating() }</span> - { review_count } Reviews - { address.join(', ') }</h4>
           </div>
         </div>
       </div>

@@ -24,6 +24,7 @@
 
 .venue-info {
   font-weight: bold;
+  margin-right: 1em;
 }
 
 .venue-price {
@@ -49,6 +50,10 @@
   left: 58%;
   width: 40%;
   margin-top: 5px;
+}
+
+span.rating {
+  font-size: 1em;
 }
 
 @media(min-width: 700px) {
