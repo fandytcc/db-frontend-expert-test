@@ -24,7 +24,7 @@ span.copy {
   animation: heart 1s 1 ease-in-out
 }
 
-@media(min-width: 700px) {
+@media(max-width: 700px) {
   button {
     margin-bottom: 230px;
   }
