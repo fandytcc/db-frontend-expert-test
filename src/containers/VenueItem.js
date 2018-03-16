@@ -15,7 +15,7 @@ const styles = {
   },
 }
 
-export const officeShape = PropTypes.shape({
+export const venueShape = PropTypes.shape({
   name: PropTypes.string.isRequired,
   coordinate: PropTypes.array.isRequired,
   image_urls: PropTypes.array,
@@ -35,9 +35,9 @@ export const officeShape = PropTypes.shape({
   favourite: false,
 })
 
-class OfficeItem extends PureComponent {
+class VenueItem extends PureComponent {
   static propTypes = {
-    ...officeShape.isRequired,
+    ...venueShape.isRequired,
   }
 
   render() {
@@ -46,18 +46,18 @@ class OfficeItem extends PureComponent {
     const { venue } = this.props
 
     return (
-      <div className="office-item">
+      <div className="venue-item">
         <Card className={classes.card} >
           <CardMedia
             className={classes.media}
             image= { venue.image_urls[0] }
-            title= "Office Item"
+            title= "Venue Item"
           />
           <CardContent>
-            <Typography className="office-name" variant="headline" component="h2">
+            <Typography className="venue-name" variant="headline" component="h2">
               { venue.name }
             </Typography>
-            <div className="office-info">
+            <div className="venue-info">
               <Typography component="p">
                 { venue.rating }
               </Typography>
@@ -79,8 +79,8 @@ class OfficeItem extends PureComponent {
   }
 }
 
-OfficeItem.propTypes = {
+VenueItem.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(OfficeItem)
+export default withStyles(styles)(VenueItem)
