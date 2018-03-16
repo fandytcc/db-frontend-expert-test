@@ -43,34 +43,36 @@ class VenueItem extends PureComponent {
   render() {
     console.log(this.props)
     const { classes } = this.props
-    const { venue } = this.props
+    const { image_urls, name, rating, review_count, address, hour_price, day_price } = this.props
 
     return (
       <div className="venue-item">
         <Card className={classes.card} >
           <CardMedia
             className={classes.media}
-            image= { venue.image_urls[0] }
+            image= { image_urls[0] }
             title= "Venue Item"
           />
           <CardContent>
             <Typography className="venue-name" variant="headline" component="h2">
-              { venue.name }
+              { name }
             </Typography>
             <div className="venue-info">
               <Typography component="p">
-                { venue.rating }
+                { rating }
               </Typography>
               <Typography component="p">
-                { venue.review_count } Reviews
+                { review_count } Reviews
               </Typography>
               <Typography component="p">
-                { venue.address }
+                { address }
               </Typography>
             </div>
             <div className="price">
-              <div className="hour-price">${venue.hour_price}/hour</div>
-              <div className="day-price">${venue.day_price} - per person</div>
+              <Typography component="p">
+                <div className="hour-price">${ hour_price }/hour</div>
+                <div className="day-price">${ day_price } - per person</div>
+              </Typography>
             </div>
           </CardContent>
         </Card>
