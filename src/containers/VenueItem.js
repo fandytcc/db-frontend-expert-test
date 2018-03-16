@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import LikeButton from '../components/LikeButton'
+import './VenueItem.css'
 
 const PLACEHOLDER = 'http://via.placeholder.com/350x180?text=No%20Image'
 
@@ -8,37 +9,27 @@ export const venueShape = PropTypes.shape({
   name: PropTypes.string.isRequired,
   coordinate: PropTypes.array.isRequired,
   image_urls: PropTypes.array,
-  address_object: PropTypes.shape({
-    address_line1: PropTypes.string.isRequired,
-    address_line2: PropTypes.string,
-    address_line3: PropTypes.string,
-    postalCode: PropTypes.string.isRequired,
-    place: PropTypes.string.isRequired,
-    country: PropTypes.string.isRequired,
-  }),
+  address: PropTypes.array,
   price_per_person: PropTypes.bool,
   hour_price: PropTypes.number,
   day_price: PropTypes.number,
   review_count: PropTypes.number,
   rating: PropTypes.number,
-  favourite: false,
 })
 
 class VenueItem extends PureComponent {
   static propTypes = {
     ...venueShape.isRequired,
-    toggleLikeVenue: PropTypes.func.isRequired
   }
 
-  toggleLike = () => {
-    const { id } = this.props
-    this.props.toggleLikeVenue(id)
+  renderRating() {
+    const { rating } = this.props
+
   }
 
   render() {
     console.log(this.props)
-    // const { classes } = this.props
-    const { image_urls, name, rating, review_count, address, hour_price, day_price, liked } = this.props
+    const { image_urls, name, rating, review_count, address, hour_price, day_price } = this.props
 
     return (
       <div className="venue-item">
@@ -47,10 +38,7 @@ class VenueItem extends PureComponent {
           style={{ backgroundImage:`url(${ image_urls[0] || PLACEHOLDER })`, display:'block', backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover', height:280, width:`100%`, zIndex: -1 }} >
 
           <div className="like-button">
-            <LikeButton
-              onChange={ this.toggleLike }
-              liked={liked}
-            />
+            <LikeButton />
           </div>
 
           <div id="venue-price">
@@ -61,7 +49,7 @@ class VenueItem extends PureComponent {
 
         <div className="venue-content">
           <div className="venue-name">
-            <h3>{ name }</h3>
+            <h2>{ name }</h2>
           </div>
 
           <div className="venue-info" style={{color: 'grey'}}>

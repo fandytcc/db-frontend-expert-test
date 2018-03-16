@@ -6,3 +6,9 @@
 .logo-img {
   max-height: 45px;
 }
+
+@media(max-width: 800px) {
+  .btn-responsive{
+    display: none !important;
+  }
+}
