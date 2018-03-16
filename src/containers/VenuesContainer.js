@@ -7,7 +7,7 @@ import Typography from 'material-ui/Typography'
 import './VenuesContainer.css'
 
 class VenuesContainer extends PureComponent {
-  static PropTypes = {
+  static propTypes = {
     venues: PropTypes.arrayOf(venueShape).isRequired,
   }
 

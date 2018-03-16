@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import superagent from 'superagent'
 import Navbar from './components/Navbar'
-import Map from './components/Map'
+import MapContainer from './containers/MapContainer'
 import VenuesContainer from './containers/VenuesContainer'
 //material-ui & styling
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -33,9 +33,7 @@ class App extends Component {
     .query(null)
     .set('Accept', 'text/json')
     .end((error, response) => {
-
       const venues = response.body.rows
-      // console.log(response.body.rows)
       this.setState({
         venues: venues
       })
@@ -48,6 +46,9 @@ class App extends Component {
       <MuiThemeProvider theme={createMuiTheme}>
         <div className="App">
           <Navbar />
+        <div className="side-bar">
+          <MapContainer markers={this.state.venues} />
+        </div>
           <VenuesContainer venues={this.state.venues} />
         </div>
       </MuiThemeProvider>
