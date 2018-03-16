@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from 'material-ui/styles'
 //material-ui
-import Card, { CardContent, CardMedia } from 'material-ui/Card'
+// import Card, { CardContent, CardMedia } from 'material-ui/Card'
 import Typography from 'material-ui/Typography'
 
 //style Card
@@ -18,6 +18,8 @@ const styles = {
     height: 250,
   },
 }
+
+const PLACEHOLDER = 'http://via.placeholder.com/350x180?text=No%20Image'
 
 export const venueShape = PropTypes.shape({
   name: PropTypes.string.isRequired,
@@ -44,44 +46,39 @@ class VenueItem extends PureComponent {
     ...venueShape.isRequired,
   }
 
+  renderRating() {
+    
+  }
+
   render() {
     console.log(this.props)
-    const { classes } = this.props
+    // const { classes } = this.props
     const { image_urls, name, rating, review_count, address, hour_price, day_price } = this.props
 
     return (
       <div className="venue-item">
-        <Card className={ classes.card }>
-          {
-            image_urls &&
-            <CardMedia
-              className={ classes.media }
-              image= { image_urls[0] }
-              title= "Venue Item"
-            />
-          }
-          <CardContent style={{width: `110%`}}>
-            <Typography className="venue-name" variant="title" align="left">
-              <strong>{ name }</strong>
-            </Typography>
-            <div className="venue-info">
-              <Typography variant="subheading" color="textSecondary" align="left">
-               <strong>{ rating } - { review_count } Reviews - { address }</strong>
-              </Typography>
-            </div>
-            <div className="price">
-                <div className="hour-price">${ hour_price }/hour</div>
-                <div className="day-price">${ day_price } - per person</div>
-            </div>
-          </CardContent>
-        </Card>
+        <div
+          className="venue-cover"
+          style={{ backgroundImage:`url(${ image_urls[0] || PLACEHOLDER })`, display:'block', backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover', height:280, width:`100%`, zIndex: -1 }} >
+
+          <div id="venue-price">
+            <div className="hour-rate">{ hour_price && <h2>${hour_price}/hour</h2>}</div>
+            <div className="day-rate"> { day_price && <h4>${day_price} - per person</h4>}</div>
+          </div>
+        </div>
+
+        <div className="venue-content">
+          <div className="venue-name">
+            <h3>{ name }</h3>
+          </div>
+
+          <div className="venue-info">
+            <h4>{ rating } - { review_count } Reviews - { address }</h4>
+          </div>
+        </div>
       </div>
     )
   }
 }
 
-VenueItem.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(VenueItem)
+export default VenueItem

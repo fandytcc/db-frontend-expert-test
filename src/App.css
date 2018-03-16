@@ -1,10 +1,26 @@
-.App {
-  /* text-align: center; */
-}
-
 .side-bar {
   width: 20%;
   float: left;
   padding: 30px;
   margin: 0;
+}
+
+.hour-rate, .day-rate {
+  flex: 1;
+  left: 60%;
+  width: 40%;
+  position: relative;
+  background-color: var(--black);
+  opacity: 0.9;
+  color: var(--primary);
+  text-align: right;
+}
+
+.day-rate {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  left: 60%;
+  width: 40%;
+  margin-top: 5px;
 }
