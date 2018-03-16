@@ -1,0 +1,17 @@
+.venue-container {
+  width: 80%;
+  float: right;
+  border-left: 2px solid var(--grey90);
+  padding: 20px;
+}
+
+.top-box{
+  padding: 15px 0;
+  text-align: left;
+}
+
+.venues-wrap {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}

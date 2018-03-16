@@ -4,7 +4,7 @@ import VenueItem from './VenueItem'
 import { venueShape } from './VenueItem'
 //material-ui & styling
 import Typography from 'material-ui/Typography'
-// import './VenuesContainer.css'
+import './VenuesContainer.css'
 
 class VenuesContainer extends PureComponent {
   static PropTypes = {
@@ -23,14 +23,12 @@ class VenuesContainer extends PureComponent {
       <div className="venue-container">
         <div className="top-box">
           <Typography variant="headline" component="h2">
-            {venues.length} results founds
+            <strong>{venues.length}</strong> results founds
           </Typography>
         </div>
-
-        <div className="venues">
+        <div className="venues-wrap">
           { this.props.venues.map(this.renderVenue) }
         </div>
-
       </div>
     )
   }
