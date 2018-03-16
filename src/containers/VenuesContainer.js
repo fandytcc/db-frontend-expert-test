@@ -27,7 +27,7 @@ class VenuesContainer extends PureComponent {
             <strong>{venues.length}</strong> results founds
           </Typography>
           <div className="map-responsive-btn">
-              <Button variant="raised" color="secondary" className="btn">Google Map</Button>
+            <Button variant="raised" color="secondary" className="btn">Google Map</Button>
           </div>
         </div>
         <div className="venues-wrap">
