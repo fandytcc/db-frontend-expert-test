@@ -57,8 +57,8 @@ class VenueItem extends PureComponent {
           </div>
 
           <div id="venue-price">
-            <div className="hour-rate">{ hour_price && <h2>${hour_price}/hour</h2>}</div>
-            <div className="day-rate"> { day_price && <h4>${day_price} - per person</h4>}</div>
+            <div className="hour-rate">{ hour_price && <h2>{hour_price}/hour</h2>}</div>
+            <div className="day-rate"> { day_price && <h4>{day_price} - per person</h4>}</div>
           </div>
         </div>
 
