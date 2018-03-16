@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Navigation from './components/Navigation'
+import Navbar from './components/Navbar'
 import Map from './components/Map'
 import OfficesContainer from './containers/OfficesContainer'
 //styling
@@ -18,13 +18,11 @@ class App extends Component {
     return { createMuiTheme }
   }
 
-
   render() {
     return (
       <MuiThemeProvider theme={createMuiTheme}>
         <div className="App">
-          <header className="App-header">
-          </header>
+          <Navbar />
           <p className="App-intro">
           </p>
         </div>

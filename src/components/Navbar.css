@@ -1,0 +1,8 @@
+.navbar {
+  box-shadow: none;
+  border-bottom: 2px solid var(--grey90);
+}
+
+.logo-img {
+  max-height: 45px;
+}
