@@ -1,40 +1,31 @@
 import { createMuiTheme } from 'material-ui/styles'
 
 // Colors
-export const green        = '#4ECDC4'
-export const red          = '#FF6B6B'
-export const yellow       = '#FFE66D'
-export const babyBlue     = '#B9E1DC'
+export const purple       = '#393A73'
+export const violet       = '#AAAAD3'
 export const white        = '#ffffff'
-export const black        = '#000000'
-export const grey         = '#FBFBFB'
-export const grey50       = 'rgba(222, 222, 222, 0.5)'
-export const grey30       = 'rgba(222, 222, 222, 0.7)'
-
-//Background
-const mintCream           = '#F7FFF7'
-const paperDark           = '#1A535C'
-const defaultDark         = '#1A535C'
-const appBarEnglishGreen  = '#1A535C'
-const contentFrameDark    = '#1A535C'
-const chipDark            = '#1A535C'
-const avatarDark          = '#1A535C'
+export const black        = '#222'
+export const grey         = '#666'
+export const grey90       = 'rgba(222, 222, 222, 0.9)'
 
 // Palette
 const theme = createMuiTheme({
    palette: {
      primary: {
-       light: green,
-       main: babyBlue,
-       dark: babyBlue,
-       contrastText: grey,
-     },
-     secondary: {
-       light: grey30,
-       main: mintCream,
-       dark: grey,
+       light: violet,
+       main: white,
+       dark: purple,
        contrastText: black,
      },
+     secondary: {
+       light: grey90,
+       main: purple,
+       dark: grey,
+       contrastText: white,
+     }
+   },
+   typography: {
+    fontFamily: ['Open San', 'sans-serif'],
    }
  })
 
