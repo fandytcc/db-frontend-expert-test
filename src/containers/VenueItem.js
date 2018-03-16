@@ -50,7 +50,7 @@ class VenueItem extends PureComponent {
       <div className="venue-item">
         <div
           className="venue-cover"
-          style={{ backgroundImage:`url(${ image_urls[0] || PLACEHOLDER })`, display:'block', backgroundPosition:'center', backgroundRepeat:'no-repeat', backgroundSize:'cover', height:280, width:`100%`, zIndex: -1 }} >
+          style={{ backgroundImage:`url(${ image_urls[0] || PLACEHOLDER })` }} >
 
           <div className="like-button">
             <LikeButton />
@@ -58,7 +58,8 @@ class VenueItem extends PureComponent {
 
           <div id="venue-price">
             <div className="hour-rate">{ hour_price && <h2>{hour_price}/hour</h2>}</div>
-            <div className="day-rate"> { day_price && <h4>{day_price} - per person</h4>}</div>
+            <div className="day-rate">
+              <h4>{ day_price ? `${day_price} - per person` : 'per person' }</h4></div>
           </div>
         </div>
 

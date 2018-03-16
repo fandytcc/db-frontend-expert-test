@@ -10,16 +10,26 @@
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+.venue-cover {
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px;
+  width: 100%;
+  z-index: -1;
+}
+
 .venue-content {
   width: 100%;
-  height: 150px;
+  height: 120px;
   text-align: left;
-  padding: 15px;
+  padding: 0 15px 15px;
 }
 
 .venue-name {
   font-weight: bold;
-  padding-bottom: 10px;
+  padding-bottom: 0;
 }
 
 .venue-info {
@@ -72,5 +82,9 @@ span.rating {
 @media(min-width: 700px) {
   .venue-item {
     max-width: 700px;
+  }
+
+  .venue-cover {
+    height: 400px;
   }
 }
