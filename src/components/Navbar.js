@@ -35,9 +35,9 @@ class Navbar extends PureComponent {
             </IconButton>
             <Typography variant="title" color="inherit" className={classes.flex}>
             </Typography>
-            <Button className="btn" color="inherit">Venues</Button>
-            <Button className="btn" color="inherit">Organisations</Button>
-            <Button className="btn" color="inherit">Help</Button>
+            <Button className="btn btn-responsive" color="inherit">Venues</Button>
+            <Button className="btn btn-responsive" color="inherit">Organisations</Button>
+            <Button className="btn btn-responsive" color="inherit">Help</Button>
             <Button className="btn" color="inherit">Log In</Button>
             <Button className="btn" variant="raised" color="secondary">Sign Up</Button>
           </Toolbar>

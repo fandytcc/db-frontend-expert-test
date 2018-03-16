@@ -13,22 +13,19 @@
   grid-column: 2/5;
 }
 
-.hour-rate, .day-rate {
-  flex: 1;
-  left: 60%;
-  width: 40%;
-  position: relative;
-  background-color: var(--black);
-  opacity: 0.9;
-  color: var(--primary);
-  text-align: right;
-}
+@media(max-width: 1400px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(1fr));
+  }
 
-.day-rate {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  left: 60%;
-  width: 40%;
-  margin-top: 5px;
+  .side-bar {
+    display: none;
+  }
+
+  .venue-container {
+    width: 100%;
+    grid-column: 1/4;
+    padding: 20px;
+  }
 }
