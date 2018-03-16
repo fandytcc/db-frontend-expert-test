@@ -50,3 +50,9 @@
   width: 40%;
   margin-top: 5px;
 }
+
+@media(min-width: 700px) {
+  .venue-item {
+    max-width: 700px;
+  }
+}

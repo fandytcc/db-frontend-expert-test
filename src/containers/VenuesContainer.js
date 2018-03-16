@@ -3,19 +3,9 @@ import PropTypes from 'prop-types'
 import VenueItem from './VenueItem'
 import { venueShape } from './VenueItem'
 //material-ui & styling
-import { withStyles } from 'material-ui/styles'
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
 import './VenuesContainer.css'
-
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  input: {
-    display: 'none',
-  },
-})
 
 class VenuesContainer extends PureComponent {
   static propTypes = {
@@ -28,7 +18,7 @@ class VenuesContainer extends PureComponent {
 
   render() {
     if (!this.props.venues) return null
-    const { venues, classes } = this.props
+    const { venues } = this.props
 
     return (
       <div className="venue-container">
@@ -37,7 +27,7 @@ class VenuesContainer extends PureComponent {
             <strong>{venues.length}</strong> results founds
           </Typography>
           <div className="map-responsive-btn">
-              <Button variant="raised" color="secondary" className={classes.button}>Google Map</Button>
+              <Button variant="raised" color="secondary" className="btn">Google Map</Button>
           </div>
         </div>
         <div className="venues-wrap">
@@ -48,8 +38,4 @@ class VenuesContainer extends PureComponent {
   }
 }
 
-VenuesContainer.propTypes = {
-  classes: PropTypes.object.isRequired,
-}
-
-export default withStyles(styles)(VenuesContainer)
+export default VenuesContainer
