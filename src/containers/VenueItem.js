@@ -9,9 +9,13 @@ import Typography from 'material-ui/Typography'
 const styles = {
   card: {
     maxWidth: 345,
+    boxShadow: 'none',
+    margin: 0,
+    padding: 0,
   },
   media: {
-    height: 200,
+    width: '125%',
+    height: 250,
   },
 }
 
@@ -47,32 +51,27 @@ class VenueItem extends PureComponent {
 
     return (
       <div className="venue-item">
-        <Card className={classes.card} >
-          <CardMedia
-            className={classes.media}
-            image= { image_urls[0] }
-            title= "Venue Item"
-          />
-          <CardContent>
-            <Typography className="venue-name" variant="headline" component="h2">
-              { name }
+        <Card className={ classes.card }>
+          {
+            image_urls &&
+            <CardMedia
+              className={ classes.media }
+              image= { image_urls[0] }
+              title= "Venue Item"
+            />
+          }
+          <CardContent style={{width: `110%`}}>
+            <Typography className="venue-name" variant="title" align="left">
+              <strong>{ name }</strong>
             </Typography>
             <div className="venue-info">
-              <Typography component="p">
-                { rating }
-              </Typography>
-              <Typography component="p">
-                { review_count } Reviews
-              </Typography>
-              <Typography component="p">
-                { address }
+              <Typography variant="subheading" color="textSecondary" align="left">
+               <strong>{ rating } - { review_count } Reviews - { address }</strong>
               </Typography>
             </div>
             <div className="price">
-              <Typography component="p">
                 <div className="hour-price">${ hour_price }/hour</div>
                 <div className="day-price">${ day_price } - per person</div>
-              </Typography>
             </div>
           </CardContent>
         </Card>

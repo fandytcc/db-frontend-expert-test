@@ -1,7 +1,13 @@
-hour-price, day-price {
+
+
+.hour-price {
   display: block;
   float: right;
-  background-color: var(--black);
+  background-color: var(--black) !important;
   color: var(--primary);
-  text-align: center;
+  text-align: right !important;
+}
+
+.venue-item {
+  border: none !important;
 }
