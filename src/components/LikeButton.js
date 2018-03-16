@@ -1,7 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import Heart from '../images/heart.svg'
-import HeartRed from '../images/heart-red.svg'
 import './LikeButton.css'
 
 class LikeButton extends PureComponent {
