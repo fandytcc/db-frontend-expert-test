@@ -12,8 +12,8 @@ class VenuesContainer extends PureComponent {
     venues: PropTypes.arrayOf(venueShape).isRequired,
   }
 
-  renderVenue(venue, index) {
-    return <VenueItem key={index} { ...venue } />
+  renderVenue(venue, i) {
+    return <VenueItem key={i} { ...venue } />
   }
 
   render() {

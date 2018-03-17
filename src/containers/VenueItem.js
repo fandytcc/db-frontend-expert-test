@@ -43,7 +43,6 @@ class VenueItem extends PureComponent {
   }
 
   render() {
-    // console.log(this.props)
     const { image_urls, name, review_count, address, hour_price, day_price } = this.props
 
     return (
