@@ -41,7 +41,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.venues)
     return (
       <MuiThemeProvider theme={createMuiTheme}>
         <div className="App">

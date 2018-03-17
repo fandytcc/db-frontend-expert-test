@@ -14,14 +14,14 @@ describe('<LikeButton />', () => {
 
   it('is wrapped in a paragraph with class "like"', () => {
     expect(button).toHaveTagName('p')
-    expect(button).toHaveClassName('LikeButton')
+    expect(button).toHaveClassName('like')
   })
 
   describe('click it', () => {
     it('toggles the "liked" state', () => {
-      expect(toggleLike.callCount).toBe(0)
+      expect(button).toHaveState({ liked: false})
       button.find('button').simulate('click')
-      expect(toggleLike.callCount).toBe(1)
+      expect(button).toHaveState({ liked: true })
     })
   })
 })

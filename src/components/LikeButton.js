@@ -1,7 +1,12 @@
 import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import './LikeButton.css'
 
 class LikeButton extends PureComponent {
+  static propTypes = {
+    liked: PropTypes.bool
+  }
+
   constructor() {
     super()
 

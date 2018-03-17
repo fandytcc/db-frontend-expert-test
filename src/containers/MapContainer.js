@@ -22,8 +22,12 @@ class MapContainer extends PureComponent {
     this.delayedShowMarker()
   }
 
+  renderMarker(marker, i) {
+    return <Marker key={i} { ...marker } />
+  }
+
+
   render() {
-    console.log(this.props)
     const markers = this.props.markers.map((venue, i) => {
       const marker = {
         position: {
@@ -33,7 +37,7 @@ class MapContainer extends PureComponent {
         label: venue.name
       }
 
-      return <Marker key={i} {...marker} onClick={this.props.onMarkerClick} />
+      return this.renderMarker(marker, i)
     })
 
     return (
